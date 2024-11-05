@@ -1,0 +1,207 @@
+.skillbox
+{
+    /* border: 1px solid darkorchid;     */
+    background-color: #F5EFFF;
+
+    position: fixed;
+
+    top: 1px;
+    bottom: 1px;
+    left: 1px;
+    right: 1px;  
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Global styles */
+*,
+*::before,
+*::after 
+{
+    box-sizing: border-box;
+}
+
+/* Variables (manually replaced) */
+:root 
+{
+    --animation-timing: 27s;
+    --carousel-items: 9;
+    --animation-delay-fraction: calc(27s / 9);
+    --animation-steps-fraction: calc(100% / 9);
+    --slide-change-timing: 3%;
+}
+
+/* Wrapper styles */
+.wrapper
+{
+    /* background: linear-gradient(60deg, #420285, #08BDBD); */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Carousel container */
+.carousel 
+{
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Carousel items */
+.carousel__item 
+{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    padding: 0 12px;
+    opacity: 0;
+    filter: drop-shadow(0 2px 2px #555);
+    will-change: transform, opacity;
+    animation: carousel-animate-vertical var(--animation-timing) linear infinite;
+}
+
+/* Manually unrolling loop logic for 9 items */
+.carousel__item:nth-child(1) 
+{
+    animation-delay: calc(var(--animation-delay-fraction) * -1);
+}
+
+.carousel__item:nth-child(2) 
+{
+    animation-delay: calc(var(--animation-delay-fraction) * 0);
+}
+
+.carousel__item:nth-child(3) 
+{
+    animation-delay: calc(var(--animation-delay-fraction) * 1);
+}
+
+.carousel__item:nth-child(4) 
+{
+    animation-delay: calc(var(--animation-delay-fraction) * 2);
+}
+
+.carousel__item:nth-child(5) 
+{
+    animation-delay: calc(var(--animation-delay-fraction) * 3);
+}
+
+.carousel__item:nth-child(6) 
+{
+    animation-delay: calc(var(--animation-delay-fraction) * 4);
+}
+
+.carousel__item:nth-child(7) 
+{
+    animation-delay: calc(var(--animation-delay-fraction) * 5);
+}
+
+.carousel__item:nth-child(8) 
+{
+    animation-delay: calc(var(--animation-delay-fraction) * 6);
+}
+
+.carousel__item:nth-child(9) 
+{
+    animation-delay: calc(var(--animation-delay-fraction) * 7);
+}
+
+/* Styling for the carousel item head (emoji circle) */
+.carousel__item-head 
+{
+    border-radius: 50%;
+    border: 3px solid black;
+    background-color: #4F1787;
+    /* box-shadow: 3px 3px 10px #4F1787; */
+
+    width: 90px;
+    height: 90px;
+    padding: 14px;    
+    margin-right: -45px;
+
+    display: flex;
+    flex-shrink: 0;
+    position: relative;    
+    align-items: center;
+    justify-content: center;
+
+    font-size: 50px;
+}
+
+/* Carousel item body */
+.carousel__item-body 
+{
+    width: 100%;
+    background-color: #2E236C;
+
+    box-shadow: 5px 5px 20px #2E236C;
+
+    border-radius: 8px;
+    padding: 16px 20px 16px 70px;
+
+    color: snow;
+}
+
+/* Title in the body */
+.title 
+{
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* Keyframes for vertical animation */
+@keyframes carousel-animate-vertical 
+{
+    0% 
+    {
+        transform: translateY(100%) scale(0.5);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    3%,
+    11.11% 
+    {
+        transform: translateY(100%) scale(0.7);
+        opacity: 0.4;
+        visibility: visible;
+    }
+
+    14.11%,
+    22.22% 
+    {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    25.22%,
+    33.33% 
+    {
+        transform: translateY(-100%) scale(0.7);
+        opacity: 0.4;
+        visibility: visible;
+    }
+
+    36.33% 
+    {
+        transform: translateY(-100%) scale(0.5);
+        opacity: 0;
+        visibility: visible;
+    }
+
+    100% 
+    {
+        transform: translateY(-100%) scale(0.5);
+        opacity: 0;
+        visibility: hidden;
+    }
+}

@@ -1,0 +1,82 @@
+.navbarBox
+{
+    width: 100%;   
+
+    display: flex;
+    justify-content: center;
+
+    position: fixed;
+    bottom: 20px;
+
+    z-index: 3;
+}
+
+.menubox
+{
+    /* border:2px solid red; */
+    border-radius: 30px;
+    background: linear-gradient(182deg, #800080, #000000);
+
+    width: 30%;
+    height: 60px;    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logos
+{
+    /* border: 2px solid black; */
+    border-radius: 50%;      
+
+    width: 40px;
+    height: 40px;    
+
+    padding: 5px 5px;
+    margin: 10px 30px 0px 30px;
+
+    transition: 0.4s ease-in-out;
+}
+.routess:hover .logos
+{
+    transform: translateY(-25px);
+
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4F1787, #800080);
+    box-shadow: -3px -3px 40px black;
+
+    /* background: none;
+    border: none;
+    box-shadow: none; */
+}
+
+.routess
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-decoration: none;
+}
+.menunames
+{
+    color: transparent; 
+    text-shadow: 1px 1px 10px snow;  
+
+    text-decoration: none;
+    font-style: oblique;
+    font-family: "Lilita One", sans-serif;
+    letter-spacing: 2px;    
+   
+    transform: translateY(30px);
+
+    transition: 0.4s ease-in-out;
+}
+
+.routess:hover .menunames
+{
+    color: snow;
+    transform: translateY(-15px);
+}
