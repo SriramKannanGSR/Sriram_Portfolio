@@ -3,13 +3,19 @@ import './Home.css';
 
 import { Link } from 'react-router-dom';
 
+import github from "../assets/Images/githubIcon.png";
+import linkedIn from "../assets/Images/linkedInIcon.png";
+import instagram from "../assets/Images/instagramIcon.png";
+import facebook from "../assets/Images/facebookIcon.png";
+
 function Home() {
  
   //const profile = "./Images/sriram3.png";
-  const github = "./Images/githubIcon.png";
-  const linkedIn = "./Images/linkedInIcon.png";
-  const instagram = "./Images/instagramIcon.png";
-  const facebook = "./Images/facebookIcon.png";
+
+  // const github = "./assets/Images/githubIcon.png";
+  // const linkedIn = "./assets/Images/linkedInIcon.png";
+  // const instagram = "./assets/Images/instagramIcon.png";
+  // const facebook = "./assets/Images/facebookIcon.png";
 
   return (
     <div className='homebox'>
